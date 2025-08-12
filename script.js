@@ -77,3 +77,14 @@ class Store {
     return total;
   }
 }
+
+// == Part 4: Store Management == //
+
+// 4.1: Create at least 5 products, including at least 2 PerishableProduct objects:
+let product1 = new ProductProperties('Apple Watch', 488.99, 1);
+let product2 = new ProductProperties('Notebook', 7.66, 4);
+let product3 = new ProductProperties('Desk Fan', 19.98, 2);
+let product4 = new ProductProperties('Protein Bars', 10.47, 5);
+let product5 = new ProductProperties('Erasers', 4.49, 3);
+let product6 = new PerishableProductProperties('Peanut Butter', 10.97, 2, '2025-12-16');
+let product7 = new PerishableProductProperties('Rice Krispies', 9.97, 4, '2026-02-28');
