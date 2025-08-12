@@ -14,7 +14,7 @@ class ProductProperties {
   }
 
   toString() {
-    console.log(`Product: ${this.name}, Price: ${this.price}, Quantity: ${this.quantity}`)
+    return `Product: ${this.name}, Price: ${this.price}, Quantity: ${this.quantity}`;
   }
 
 // == Part 3: Static Methods and Properties == //
@@ -43,7 +43,7 @@ class PerishableProductProperties extends ProductProperties {
 
 // 2.2: Methods:
   toString() {
-    console.log(`Product: ${this.name}, Price: ${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`);
+    return `Product: ${this.name}, Price: ${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`;
   }
 }
 
@@ -116,3 +116,15 @@ console.log("Total Inventory Value (Before Discount): ", Walmart.getInventoryVal
 // AFTER
 ProductProperties.applyDiscount(Walmart.inventory, 0.15); // * Apply the discount
 console.log("Total Inventory Value (After 15% Discount): ", Walmart.getInventoryValue()); // * Calls the same function but now all the .price attributes are changes from the .applyDiscount function above
+
+// 4.4: Find and print the details of a specific product by its name:
+const foundProduct = Walmart.findProductByName('Apple Watch');
+
+// * Checks if the findProductByName() function returned an object, if it does,
+// * it'll print the product's details by calling its toString() method
+if (foundProduct) {
+  console.log("Product found!");
+  console.log(foundProduct.toString());
+} else {
+  console.log("Couldn't find product!");
+}
