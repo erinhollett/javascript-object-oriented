@@ -51,3 +51,10 @@ class PerishableProductProperties extends ProductProperties {
 // 2.3: Task: Create at least two instances of this class with sample data:
 let receipt1 = new PerishableProductProperties('Blueberries', 3.99, 2, '2025-08-20');
 let receipt2 = new PerishableProductProperties('Bananas', 2.50, 1, '2025-08-16');
+
+// == Part 4: Store Management == //
+class Store {
+  constructor() {
+    this.inventory = [];  // * To store an array of product objects
+  }
+}
