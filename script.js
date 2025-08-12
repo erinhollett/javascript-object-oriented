@@ -53,13 +53,27 @@ let receipt1 = new PerishableProductProperties('Blueberries', 3.99, 2, '2025-08-
 let receipt2 = new PerishableProductProperties('Bananas', 2.50, 1, '2025-08-16');
 
 // == Part 4: Store Management == //
+// 4.1: Create a Store ClassProperties inventory (array): 
 class Store {
   constructor() {
     this.inventory = [];  // * To store an array of product objects
   }
-
+// 4.2: Methods:
   // * Adds new product object to this.inventory
   addProduct(product) {
     this.inventory.push(product);
+  }
+
+// * Calculates and returns the total value from all the products in the store,
+// * inventory. This will loop through each product in the this.inventory array,
+// * and add the value of its .price propery to the value held at the variable,
+// * total, which in each loop will add and update to include each price,
+// * and then returns the final total once all the products are processed.
+  getInventoryValue() {
+    let total = 0; // * Need to declare are variable to gather the total
+    for (const product of this.inventory) { // * Go through each 'product' in the array
+      total += product.price; // * Update the total each loop with each product.price
+    }
+    return total;
   }
 }
