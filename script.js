@@ -88,3 +88,13 @@ let product4 = new ProductProperties('Protein Bars', 10.47, 5);
 let product5 = new ProductProperties('Erasers', 4.49, 3);
 let product6 = new PerishableProductProperties('Peanut Butter', 10.97, 2, '2025-12-16');
 let product7 = new PerishableProductProperties('Rice Krispies', 9.97, 4, '2026-02-28');
+
+// 4.2: Add these products to a Store object:
+let Walmart = new Store();
+Walmart.addProduct(product1);
+Walmart.addProduct(product2);
+Walmart.addProduct(product3);
+Walmart.addProduct(product4);
+Walmart.addProduct(product5);
+Walmart.addProduct(product6);
+Walmart.addProduct(product7);
