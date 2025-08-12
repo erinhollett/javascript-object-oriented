@@ -98,3 +98,10 @@ Walmart.addProduct(product4);
 Walmart.addProduct(product5);
 Walmart.addProduct(product6);
 Walmart.addProduct(product7);
+
+// 4.3: Print the total inventory value before and after applying a 15% discount
+// BEFORE:
+console.log("Total Inventory Value (Before Discount): ", Walmart.getInventoryValue()); 
+// AFTER
+ProductProperties.applyDiscount(Walmart.inventory, 0.15); // * Apply the discount
+console.log("Total Inventory Value (After 15% Discount): ", Walmart.getInventoryValue()); // * Calls the same function but now all the .price attributes are changes from the .applyDiscount function above
