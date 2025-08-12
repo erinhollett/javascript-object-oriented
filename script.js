@@ -18,12 +18,9 @@ class ProductProperties {
   }
 
 // == Part 3: Static Methods and Properties == //
-// * Takes in the array of objects (products) and discount rate (discount),
-// * loops through each object in the array, accesses the .price property,
-// * calculates the discount amount by multiplying the price by the discount,
-// * subtracts the discount amount from the original price, then updates the
-// * .price property of that object to the new discounted price,
-// * and will do that for each object in the array.
+// * Applies a discount to all products in an array
+// * products: array of Product/PerishableProduct objects
+// * discount: decimal value (e.g., 0.15 for 15%)
   static applyDiscount(products, discount) {
     for (const product of products) {
       const discountAmount = product.price * discount;
@@ -63,22 +60,16 @@ class Store {
     this.inventory.push(product);
   }
 
-// * Calculates and returns the total value from all the products in the store,
-// * inventory. This will loop through each product in the this.inventory array,
-// * for each product, it calls its getTotalValue() method (price * quantity),
-// * and adds each products total value to the running 'total' variable.
-// * It then returns the final total once all the products are processed.
+// * Calculates total value of all products in the inventory
   getInventoryValue() {
-    let total = 0; // * Need to declare are variable to gather the total
-    for (const product of this.inventory) { // * Go through each 'product' in the array
-      total += product.getTotalValue(); // * Update the total each loop with each product's total value
+    let total = 0; 
+    for (const product of this.inventory) { 
+      total += product.getTotalValue(); 
     }
     return Number(total.toFixed(2)); // * Rounds output total to 2 decimals
   }
 
-// * Loops though each product in the store's inventory array, and checks if,
-// * the .name matches the name passed into the method, if there is a match,
-// * it'll return the product and if not it'll return 'null'
+// * Finds a product by name and returns it, or null if not found
   findProductByName(name) {
     for (const product of this.inventory) {
       if (product.name === name) {
