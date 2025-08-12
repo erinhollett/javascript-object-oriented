@@ -31,3 +31,6 @@ class PerishableProductProperties extends ProductProperties {
     console.log(`Product: ${this.name}, Price: ${this.price}, Quantity: ${this.quantity}, Expiration Date: ${this.expirationDate}`);
   }
 }
+
+let receipt1 = new PerishableProductProperties('Blueberries', 3.99, 2, '2025-08-20');
+let receipt2 = new PerishableProductProperties('Bananas', 2.50, 1, '2025-08-16');
