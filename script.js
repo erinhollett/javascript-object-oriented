@@ -17,6 +17,20 @@ class ProductProperties {
   toString() {
     console.log(`Product: ${this.name}, Price: ${this.price}, Quantity: ${this.quantity}`)
   }
+
+// == Part 3: Static Methods and Properties == //
+// * Takes in the array of objects (products) and discount rate (discount),
+// * loops through each object in the array, accesses the .price property,
+// * calculates the discount amount by multiplying the price by the discount,
+// * subtracts the discount amount from the original price, then updates the
+// * .price property of that object to the new discounted price,
+// * and will do that for each object in the array.
+  static applyDiscount(products, discount) {
+    for (const product of products) {
+      const discountAmount = product.price * discount;
+      product.price -= discountAmount;
+    };
+  }
 }
 
 // == Part 2: Adding Inheritance == //
