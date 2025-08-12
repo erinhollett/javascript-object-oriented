@@ -10,8 +10,7 @@ class ProductProperties {
 
 // 1.2: Methods:
   getTotalValue() {
-    totalValue = this.price * this.quantity;
-    console.log(totalValue);
+    return this.price * this.quantity;
   }
 
   toString() {
@@ -66,13 +65,13 @@ class Store {
 
 // * Calculates and returns the total value from all the products in the store,
 // * inventory. This will loop through each product in the this.inventory array,
-// * and add the value of its .price propery to the value held at the variable,
-// * total, which in each loop will add and update to include each price,
-// * and then returns the final total once all the products are processed.
+// * for each product, it calls its getTotalValue() method (price * quantity),
+// * and adds each products total value to the running 'total' variable.
+// * It then returns the final total once all the products are processed.
   getInventoryValue() {
     let total = 0; // * Need to declare are variable to gather the total
     for (const product of this.inventory) { // * Go through each 'product' in the array
-      total += product.price; // * Update the total each loop with each product.price
+      total += product.getTotalValue(); // * Update the total each loop with each product.price
     }
     return total;
   }
