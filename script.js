@@ -73,7 +73,7 @@ class Store {
     for (const product of this.inventory) { // * Go through each 'product' in the array
       total += product.getTotalValue(); // * Update the total each loop with each product's total value
     }
-    return total;
+    return Number(total.toFixed(2)); // * Rounds output total to 2 decimals
   }
 
 // * Loops though each product in the store's inventory array, and checks if,
