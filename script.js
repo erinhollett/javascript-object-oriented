@@ -71,9 +71,21 @@ class Store {
   getInventoryValue() {
     let total = 0; // * Need to declare are variable to gather the total
     for (const product of this.inventory) { // * Go through each 'product' in the array
-      total += product.getTotalValue(); // * Update the total each loop with each product.price
+      total += product.getTotalValue(); // * Update the total each loop with each product's total value
     }
     return total;
+  }
+
+// * Loops though each product in the store's inventory array, and checks if,
+// * the .name matches the name passed into the method, if there is a match,
+// * it'll return the product and if not it'll return 'null'
+  findProductByName(name) {
+    for (const product of this.inventory) {
+      if (product.name === name) {
+        return product; // * Return the product if found
+      }
+    }
+    return null; // * If there's no matching name
   }
 }
 
