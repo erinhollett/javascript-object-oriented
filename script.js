@@ -57,4 +57,9 @@ class Store {
   constructor() {
     this.inventory = [];  // * To store an array of product objects
   }
+
+  // * Adds new product object to this.inventory
+  addProduct(product) {
+    this.inventory.push(product);
+  }
 }
